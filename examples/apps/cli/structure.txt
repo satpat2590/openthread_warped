@@ -1,0 +1,2266 @@
+moduleName: "out-of-box"
+
+moduleId: 0
+
+      moduleEvents: [
+        {
+          brief: "A full out-of-box has been requested over BLE",
+          moduleEventName: "FULL_OOB_REQUESTED_VIA_BLE",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A full out-of-box has been requested over OpenThread (via system deactivate feature)",
+          moduleEventName: "FULL_OOB_REQUESTED_VIA_OT",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A full out-of-box has been requested via local buttons",
+          moduleEventName: "FULL_OOB_REQUESTED_VIA_BUTTONS",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A full out-of-box has been completed successfully",
+          moduleEventName: "FULL_OOB_SUCCESS",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A full out-of-box has been completed, but failed",
+          moduleEventName: "FULL_OOB_FAILURE",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "A partial out-of-box has been requested over OpenThread",
+          moduleEventName: "PARTIAL_OOB_REQUESTED_VIA_OT",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A partial out-of-box has been completed successfully",
+          moduleEventName: "PARTIAL_OOB_SUCCESS",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A partial out-of-box has been completed, but failed",
+          moduleEventName: "PARTIAL_OOB_FAILURE",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "A full out of box event has failed due to panel timeout",
+          moduleEventName: "FULL_OOB_TIMEOUT_FAILURE",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "A partial out-of-box has been requested via wireless debug",
+          moduleEventName: "PARTIAL_OOB_REQUESTED_VIA_WIRELESS_DEBUG",
+          moduleEventId: 9,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A full out-of-box has been requested via wireless debug",
+          moduleEventName: "FULL_OOB_REQUESTED_VIA_WIRELESS_DEBUG",
+          moduleEventId: 10,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        }
+      ]
+
+
+
+moduleName: "firmware-update"
+
+moduleId: 1
+
+      moduleEvents: [
+        {
+          brief: "Attempting to firmware update app from this revision",
+          moduleEventName: "APPLY_APP",
+          moduleEventId: 0,
+          dataLength: 4,
+          data: [
+            {
+              ware revision before the firmware update is applied",
+              moduleEventName: "softwareRev",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Firmware update of app completed successfully",
+          moduleEventName: "APPLY_APP_SUCCESS",
+          moduleEventId: 1,
+          dataLength: 4,
+          data: [
+            {
+               revision after the firmware update is applied",
+              moduleEventName: "softwareRev",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Firmware update attempt of app failed",
+          moduleEventName: "APPLY_APP_FAILURE",
+          moduleEventId: 2,
+          dataLength: 4,
+          data: [
+            {
+              brief: "The status that indicates the firmware update failure",
+              moduleEventName: "lastUpdateStatus",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "The sub-status that indicates the firmware update failure",
+              moduleEventName: "lastUpdateSubStatus",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Attempting to firmware update boot from this revision",
+          moduleEventName: "APPLY_BOOT",
+          moduleEventId: 3,
+          dataLength: 4,
+          data: [
+            {
+              mware revision before the firmware update is applied",
+              moduleEventName: "softwareRev",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Firmware update of boot completed successfully",
+          moduleEventName: "APPLY_BOOT_SUCCESS",
+          moduleEventId: 4,
+          dataLength: 4,
+          data: [
+            {
+              e revision after the firmware update is applied",
+              moduleEventName: "softwareRev",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Firmware update attempt of boot failed",
+          moduleEventName: "APPLY_BOOT_FAILURE",
+          moduleEventId: 5,
+          dataLength: 4,
+          data: [
+            {
+              brief: "The status that indicates the firmware update failure",
+              moduleEventName: "lastUpdateStatus",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "The sub-status that indicates the firmware update failure",
+              moduleEventName: "lastUpdateSubStatus",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Rollback of the app completed successfully",
+          moduleEventName: "APP_ROLLBACK_SUCCESS",
+          moduleEventId: 6,
+          dataLength: 4,
+          data: [
+            {
+               revision after the firmware update is applied",
+              moduleEventName: "softwareRev",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The app was not rolled back",
+          moduleEventName: "APP_ROLLBACK_FAILURE",
+          moduleEventId: 7,
+          dataLength: 4,
+          data: [
+            {
+              brief: "The status that indicates the rollback failure",
+              moduleEventName: "lastUpdateStatus",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "The sub-status that indicates the rollback failure",
+              moduleEventName: "lastUpdateSubStatus",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Attempting to rollback app from this revision",
+          moduleEventName: "APPLY_ROLLBACK",
+          moduleEventId: 8,
+          dataLength: 4,
+          data: [
+            {
+              ware revision before the rollback is applied",
+              moduleEventName: "softwareRev",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The Rollback file was requested to be deleted and was deleted successfully",
+          moduleEventName: "DELETE_ROLLBACK_SUCCESS",
+          moduleEventId: 9,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The Rollback file was requested to be deleted and could not be deleted",
+          moduleEventName: "DELETE_ROLLBACK_FAILURE",
+          moduleEventId: 10,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "natural-show-runner"
+
+moduleId: 2
+
+      moduleEvents: [
+        {
+          brief: "Indicates a natural show event was pushed to the UI queue. Contains the first set of data related to this event (broken up due to event data limit).",
+          moduleEventName: "EVENT_ACTIVATE_NATURAL_SHOW_PUSHED_PART_1",
+          moduleEventId: 0,
+          dataLength: 9,
+          data: [
+            {
+              brief: "The ID of the Natural Show to start tracking",
+              moduleEventName: "naturalShowId",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "The Step Number within the show to activate",
+              moduleEventName: "stepNumber",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "The offset (in quarter seconds) into the step at which to intercept the show curve. Limited to a 24-hour intercept time",
+              moduleEventName: "offset",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 1
+        },
+        {
+          brief: "Contains the second set of data related to EVENT_ACTIVATE_NATURAL_SHOW_PUSHED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_ACTIVATE_NATURAL_SHOW_PUSHED_PART_2",
+          moduleEventId: 1,
+          dataLength: 6,
+          data: [
+            {
+              brief: "The fade time (in quarter seconds) over which to do the transition to the intercept point. In the range [0, 65535] providing 4:33:03.75 of time.",
+              moduleEventName: "interceptTime",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "The fade time (in quarter seconds) over which to do the transition to the step state. Limited to a 24-hour intercept time",
+              moduleEventName: "stepFadeTime",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 2
+        },
+        {
+          brief: "Indicates a go to show step event was pushed to the UI queue. Contains the first set of data related to this event (broken up due to event data limit).",
+          moduleEventName: "EVENT_GO_TO_SHOW_STEP_PUSHED_PART_1",
+          moduleEventId: 2,
+          dataLength: 9,
+          data: [
+            {
+              brief: "The ID of the Natural Show to start tracking",
+              moduleEventName: "naturalShowId",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "The Step Number within the show to activate",
+              moduleEventName: "stepNumber",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "The fade time (in quarter seconds) over which to do the transition",
+              moduleEventName: "fadeTime",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 1
+        },
+        {
+          brief: "Contains the second set of data related to EVENT_GO_TO_SHOW_STEP_PUSHED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_GO_TO_SHOW_STEP_PUSHED_PART_2",
+          moduleEventId: 3,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Forces the device to activate the step, regardless of if it is tracking the show",
+              moduleEventName: "forceActivate",
+              moduleType: "bool"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 2
+        },
+        {
+          brief: "Indicates an activate go to natural show event was pushed to the UI queue. Contains the first set of data related to this event (broken up due to event data limit).",
+          moduleEventName: "EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_PUSHED_PART_1",
+          moduleEventId: 4,
+          dataLength: 9,
+          data: [
+            {
+              brief: "The ID of the Natural Show to start tracking",
+              moduleEventName: "naturalShowId",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "Specifies a target intensity for the show in the case where one is not specified in the associated show record",
+              moduleEventName: "intensity.value()",
+              moduleType: "std::optional<uint16_t>::value()"
+            },
+            {
+              brief: "",
+              moduleEventName: "intensity.has_value()",
+              moduleType: "std::optional::has_value()"
+            },
+            {
+              brief: "Time in quarter seconds the load should take to fade to the intercept with the natural show curve before initiating the show fade",
+              moduleEventName: "fade",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 1
+        },
+        {
+          brief: "Contains the second set of data related to EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_PUSHED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_PUSHED_PART_2",
+          moduleEventId: 5,
+          dataLength: 6,
+          data: [
+            {
+              brief: "Time (in quarter seconds) that the load should delay before fading to the intercept with the natural show curve",
+              moduleEventName: "delay",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "Indicates the current local time of day, in quarter seconds after midnight",
+              moduleEventName: "timeOfDay",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 2
+        },
+        {
+          brief: "Contains the third set of data related to EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_PUSHED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_PUSHED_PART_3",
+          moduleEventId: 6,
+          dataLength: 8,
+          data: [
+            {
+              brief: "Indicates the offset before or after sunrise in quarter seconds",
+              moduleEventName: "timeAfterSunrise",
+              moduleType: "int32_t"
+            },
+            {
+              brief: "Indicates the offset before or after sunset in quarter seconds",
+              moduleEventName: "timeAfterSunset",
+              moduleType: "int32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 3
+        },
+        {
+          brief: "Indicates a natural show activate was acted upon. Contains the first set of data related to this event (broken up due to event data limit).",
+          moduleEventName: "EVENT_ACTIVATE_NATURAL_SHOW_EXERCISED_PART_1",
+          moduleEventId: 7,
+          dataLength: 9,
+          data: [
+            {
+              brief: "The ID of the Natural Show to start tracking",
+              moduleEventName: "naturalShowId",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "The Step Number within the show to activate",
+              moduleEventName: "stepNumber",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "The offset (in quarter seconds) into the step at which to intercept the show curve. Limited to a 24-hour intercept time",
+              moduleEventName: "offset",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 1
+        },
+        {
+          brief: "Contains the second set of data related to EVENT_ACTIVATE_NATURAL_SHOW_EXERCISED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_ACTIVATE_NATURAL_SHOW_EXERCISED_PART_2",
+          moduleEventId: 8,
+          dataLength: 6,
+          data: [
+            {
+              brief: "The fade time (in quarter seconds) over which to do the transition to the intercept point. In the range [0, 65535] providing 4:33:03.75 of time.",
+              moduleEventName: "interceptTime",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "The fade time (in quarter seconds) over which to do the transition to the step state. Limited to a 24-hour intercept time",
+              moduleEventName: "stepFadeTime",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 2
+        },
+        {
+          brief: "Indicates a go to show step was acted upon. Contains the first set of data related to this event (broken up due to event data limit).",
+          moduleEventName: "EVENT_GO_TO_SHOW_STEP_EXERCISED_PART_1",
+          moduleEventId: 9,
+          dataLength: 9,
+          data: [
+            {
+              brief: "The ID of the Natural Show to start tracking",
+              moduleEventName: "naturalShowId",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "The Step Number within the show to activate",
+              moduleEventName: "stepNumber",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "The fade time (in quarter seconds) over which to do the transition",
+              moduleEventName: "fadeTime",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 1
+        },
+        {
+          brief: "Contains the second set of data related to EVENT_GO_TO_SHOW_STEP_EXERCISED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_GO_TO_SHOW_STEP_EXERCISED_PART_2",
+          moduleEventId: 10,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Forces the device to activate the step, regardless of if it is tracking the show",
+              moduleEventName: "forceActivate",
+              moduleType: "bool"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 2
+        },
+        {
+          brief: "Indicates an activate go to natural show was acted upon. Contains the first set of data related to this event (broken up due to event data limit).",
+          moduleEventName: "EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_EXERCISED_PART_1",
+          moduleEventId: 11,
+          dataLength: 9,
+          data: [
+            {
+              brief: "The ID of the Natural Show to start tracking",
+              moduleEventName: "naturalShowId",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "Specifies a target intensity for the show in the case where one is not specified in the associated show record",
+              moduleEventName: "intensity.value()",
+              moduleType: "std::optional<uint16_t>::value()"
+            },
+            {
+              brief: "",
+              moduleEventName: "intensity.has_value()",
+              moduleType: "std::optional::has_value()"
+            },
+            {
+              brief: "Time in quarter seconds the load should take to fade to the intercept with the natural show curve before initiating the show fade",
+              moduleEventName: "fade",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 1
+        },
+        {
+          brief: "Contains the second set of data related to EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_EXERCISED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_EXERCISED_PART_2",
+          moduleEventId: 12,
+          dataLength: 6,
+          data: [
+            {
+              brief: "Time (in quarter seconds) that the load should delay before fading to the intercept with the natural show curve",
+              moduleEventName: "delay",
+              moduleType: "uint16_t"
+            },
+            {
+              brief: "Indicates the current local time of day, in quarter seconds after midnight",
+              moduleEventName: "timeOfDay",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 2
+        },
+        {
+          brief: "Contains the third set of data related to EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_EXERCISED (broken up due to event data limit). Does not indicate this event occuring again after the first set of data",
+          moduleEventName: "EVENT_PRESET_ACTIVATE_GOTO_NATURAL_SHOW_EXERCISED_PART_3",
+          moduleEventId: 13,
+          dataLength: 8,
+          data: [
+            {
+              brief: "Indicates the offset before or after sunrise in quarter seconds",
+              moduleEventName: "timeAfterSunrise",
+              moduleType: "int32_t"
+            },
+            {
+              brief: "Indicates the offset before or after sunset in quarter seconds",
+              moduleEventName: "timeAfterSunset",
+              moduleType: "int32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO",
+          "PartialDataPart": 3
+        }
+      ]
+
+moduleName: "hardware-detection"
+      
+moduleId: 3
+
+      moduleEvents: [
+        {
+          brief: "Over temperature detected",
+          moduleEventName: "OVER_TEMPERATURE_DETECTED",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Over temperature state recovered",
+          moduleEventName: "OVER_TEMPERATURE_RECOVERED",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Over voltage error occurred and detected",
+          moduleEventName: "OVER_VOLTAGE_ERROR",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Over current error occurred and detected",
+          moduleEventName: "OVER_CURRENT_ERROR",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Shorted fet error confirmed. Load won't be turned on now",
+          moduleEventName: "SHORTED_FET_CONFIRMED",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Shorted fet error state but not confirmed",
+          moduleEventName: "SHORTED_FET_NOT_CONFIRMED",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Shorted fet capping load driver error",
+          moduleEventName: "SHORTED_FET_CAPPING_LOAD",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Zero cross missed",
+          moduleEventName: "ZERO_CROSS_MISSED",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Scr open detected for scr based load drivers",
+          moduleEventName: "SCR_OPEN_DETECT_FAILURE",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Scr open detect recovered for scr based load drivers",
+          moduleEventName: "SCR_OPEN_DETECT_RECOVERY",
+          moduleEventId: 9,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Line sync lost (generally, happens after 3 consecutive zc misses)",
+          moduleEventName: "LOAD_DRIVER_LINE_SYNC_LOST",
+          moduleEventId: 10,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Load driver in sync with line voltage signal.",
+          moduleEventName: "LOAD_DRIVER_LINE_SYNC_COMPLETE",
+          moduleEventId: 11,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Load driver detected miswire.",
+          moduleEventName: "LOAD_DRIVER_MISWIRE_DETECTED",
+          moduleEventId: 12,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Load driver detected blue wire miswire.",
+          moduleEventName: "LOAD_DRIVER_BLUEWIRE_MISWIRE_DETECTED",
+          moduleEventId: 13,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Phase Changed.",
+          moduleEventName: "PHASE_CHANGED",
+          moduleEventId: 14,
+          dataLength: 1,
+          data: [
+            {
+              brief: "New phase device is operating on",
+              moduleEventName: "newPhase",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Line sync not acquired within the panel startup timeout",
+          moduleEventName: "INIT_LINE_SYNC_TIMEOUT",
+          moduleEventId: 15,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Line sync out of range detected by load driver",
+          moduleEventName: "LINE_SYNC_OUT_OF_RANGE",
+          moduleEventId: 16,
+          dataLength: 2,
+          data: [
+            {
+              brief: "Line Sync Out of Range Value",
+              moduleEventName: "lineSyncOutOfRangeValue",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "captouch-micro"
+
+moduleId: 4
+
+      moduleEvents: [
+        {
+          brief: "Captouch micro recal max count error",
+          moduleEventName: "TI_RECAL_MAX_COUNT_ERROR",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Inter-micro communication with Captouch micro timed out",
+          moduleEventName: "INTERMICRO_TIMEOUT_ERROR",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Captouch micro unknown reset error",
+          moduleEventName: "TI_RESET_UNKNOWN",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro brownout reset",
+          moduleEventName: "TI_RESET_BROWNOUT",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro NMI reset",
+          moduleEventName: "TI_RESET_RST_NMI",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro PMMSWBOR reset",
+          moduleEventName: "TI_RESET_PMMSWBOR",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro LOW power wakeup reset",
+          moduleEventName: "TI_RESET_LOW_POWER_WAKEUP",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro security violation reset",
+          moduleEventName: "TI_RESET_SECURITY_VIOLATION",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro SVSHIFG reset",
+          moduleEventName: "TI_RESET_SVSHIFG",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro PMMSWPOR reset",
+          moduleEventName: "TI_RESET_PMMSWPOR",
+          moduleEventId: 9,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro WDOG reset",
+          moduleEventName: "TI_RESET_WATCHDOG_TIMEOUT",
+          moduleEventId: 10,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro FRCTL password violation reset",
+          moduleEventName: "TI_RESET_FRCTL_PASSWORD_VIOLATION",
+          moduleEventId: 11,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro FRAM_BIT_ERROR_DETECTION reset",
+          moduleEventName: "TI_RESET_FRAM_BIT_ERROR_DETECTION",
+          moduleEventId: 12,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro PERIPHERAL_AREA_FETCH reset",
+          moduleEventName: "TI_RESET_PERIPHERAL_AREA_FETCH",
+          moduleEventId: 13,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro FLL_UNLOCK reset",
+          moduleEventName: "TI_RESET_FLL_UNLOCK",
+          moduleEventId: 14,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch EOL test complete",
+          moduleEventName: "EOL_CAPTOUCH_TEST_COMPLETE",
+          moduleEventId: 15,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "Captouch EOL board test complete",
+          moduleEventName: "EOL_CAPTOUCH_BOARD_TEST_COMPLETE",
+          moduleEventId: 16,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "Captouch micro cannot calibrate",
+          moduleEventName: "TI_MICRO_CANNOT_CALIBRATE",
+          moduleEventId: 17,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro recalibrating due to negative touch",
+          moduleEventName: "TI_RECAL_NEGATIVE_TOUCH",
+          moduleEventId: 18,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Captouch micro recalibrating due to environmental shift",
+          moduleEventName: "TI_RECAL_ENVIRONMENTAL_SHIFT",
+          moduleEventId: 19,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Captouch micro reset wdog password violation",
+          moduleEventName: "TI_RESET_WATCHDOG_PASSWORD_VIOLATION",
+          moduleEventId: 20,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Captouch micro reset PMM password violation",
+          moduleEventName: "TI_RESET_PMM_PASSWORD_VIOLATION",
+          moduleEventId: 21,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "buttons"
+
+moduleId: 5
+
+      moduleEvents: [
+        {
+          brief: "Stuck button",
+          moduleEventName: "BUTTON_STUCK",
+          moduleEventId: 0,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Indicates which button was stuck",
+              moduleEventName: "buttonNumber",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "ON button eol test complete",
+          moduleEventName: "EOL_ON_BUTTON_TEST_COMPLETE",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OFF button eol test complete",
+          moduleEventName: "EOL_OFF_BUTTON_TEST_COMPLETE",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        }
+      ]
+
+moduleName: "bluewire-multilocation"
+
+moduleId: 6
+
+      moduleEvents: [
+        {
+          brief: "Multilocation eol test complete",
+          moduleEventName: "EOL_MULTILOCATION_TEST_COMPLETE",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "miswire detected on bluewire",
+          moduleEventName: "BLUEWIRE_MISWIRE_DETECTED",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "bluewire module reset due to invalid state error",
+          moduleEventName: "BLUEWIRE_INVALID_STATE_ERROR",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "inter-micro"
+
+moduleId: 7
+
+      moduleEvents: [
+        {
+          brief: "Break received during inter-micro packet making it invalid",
+          moduleEventName: "BREAK_RECEIVED_DURING_MESSAGE",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Invalid Payload received in Packet",
+          moduleEventName: "PACKET_ERROR_INVALID_CHECKSUM",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Inter-micro communication with Captouch micro timed out",
+          moduleEventName: "TIMEOUT_ERROR",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Inter-micro communication receive packet buffer is full",
+          moduleEventName: "RX_PACKET_QUEUE_FULL",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Invalid Command received in Packet",
+          moduleEventName: "PACKET_ERROR_INVALID_COMMAND",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Transmit packet queue is full and can't take another message",
+          moduleEventName: "TX_PACKET_QUEUE_FULL",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        }
+      ]
+
+moduleName: "ble"
+
+moduleId: 8
+
+     moduleEvents: [
+        {
+          brief: "Claiming state is now idle i.e. device is exiting claiming mode if it was active",
+          moduleEventName: "CLAIMING_IDLE",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Entering claiming mode",
+          moduleEventName: "ENTER_CLAIMING",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Device was claimed via ble",
+          moduleEventName: "CLAIMED",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Device timed out of claiming",
+          moduleEventName: "CLAIMING_TIMEOUT",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Device tried to enter a unknown claiming state",
+          moduleEventName: "UNKNOWN_CLAIMING_STATE",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Diagnostic state is idle i.e. device is exiting diagnostic mode if it was active",
+          moduleEventName: "DIAGNOSTIC_IDLE",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Entering diagnostic mode",
+          moduleEventName: "ENTER_DIAGNOSTIC",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to OOB device via ble diagnostics",
+          moduleEventName: "DIAGNOSTIC_OOB_FAILED",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Device timed out of diagnostic",
+          moduleEventName: "DIAGNOSTIC_TIMEOUT",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Device tried to enter a unknown diagnostic state",
+          moduleEventName: "UNKNOWN_DIAGNOSTIC_STATE",
+          moduleEventId: 9,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Device was selected via ble. Applicable to both claiming and diagnostic",
+          moduleEventName: "SELECTED",
+          moduleEventId: 10,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Start Bluetooth scanning",
+          moduleEventName: "START_SCANNING",
+          moduleEventId: 11,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Stop Bluetooth scanning",
+          moduleEventName: "STOP_SCANNING",
+          moduleEventId: 12,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Start advertisements from the device",
+          moduleEventName: "START_ADVERTISEMENTS",
+          moduleEventId: 13,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Stop advertisements from the device",
+          moduleEventName: "STOP_ADVERTISEMENTS",
+          moduleEventId: 14,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "BLE connection closed",
+          moduleEventName: "CLOSE_CONNECTION",
+          moduleEventId: 15,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "BLE connection force closed",
+          moduleEventName: "FORCE_CLOSE_CONNECTION",
+          moduleEventId: 16,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "BLE connection closed gracefully",
+          moduleEventName: "CONNECTION_CLOSED_GRACEFULLY",
+          moduleEventId: 17,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Fatal: BLE stack init failure",
+          moduleEventName: "BLE_STACK_INIT_FAILED",
+          moduleEventId: 18,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Fatal: BLE class init failure",
+          moduleEventName: "BLE_CLASSES_INIT_FAILED",
+          moduleEventId: 19,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Error setting the soft timer when starting bluetooth. Will eventually result in reset by task supervisor",
+          moduleEventName: "BLE_SYSTEM_SET_SOFT_TIMER_FAILED",
+          moduleEventId: 20,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Error sending notification to remote GATT client",
+          moduleEventName: "GATT_SERVER_SEND_NOTIFICATION_ERROR",
+          moduleEventId: 21,
+          dataLength: 5,
+          data: [
+            {
+              brief: "The ble module from which the notification was attempted to be sent (eg.Advanced diagnostics, ble-tls-buffers, etc",
+              moduleEventName: "bleModule",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "The error code returned while attempting to send notification",
+              moduleEventName: "errorCode",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Error while stopping BLE scanning",
+          moduleEventName: "BLE_STOP_SCANNING_ERROR",
+          moduleEventId: 22,
+          dataLength: 4,
+          data: [
+            {
+              brief: "The error code returned while attempting to stop scanning",
+              moduleEventName: "errorCode",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Error calling a BLE stack function. This means BLE_ASSERT_SUCCESS() failed",
+          moduleEventName: "ERROR_CALLING_BLE_STACK_FUNCTION",
+          moduleEventId: 23,
+          dataLength: 4,
+          data: [
+            {
+              brief: "The error code returned while attempting to call something in BLE stack",
+              moduleEventName: "errorCode",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "network-init"
+
+moduleId: 9
+
+      moduleEvents: [
+        {
+          brief: "Entering wireless debug",
+          moduleEventName: "ENTERING_WIRELESS_DEBUG",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "Exiting wireless debug",
+          moduleEventName: "EXITING_WIRELESS_DEBUG",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "Starting BLE",
+          moduleEventName: "STARTING_BLE",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Stopping BLE",
+          moduleEventName: "STOPPING_BLE",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Starting OT",
+          moduleEventName: "STARTING_OPEN_THREAD",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Stopping OT",
+          moduleEventName: "STOPPING_OPEN_THREAD",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        }
+      ]
+
+moduleName: "data-object"
+
+moduleId: 10
+
+      moduleEvents: [
+        {
+          brief: "Failed to init preset data object.",
+          moduleEventName: "PRESET_FAILED_TO_INIT",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to close cbor of preset data object.",
+          moduleEventName: "PRESET_FAILED_TO_CLOSE",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed rebuild jump table of preset data object.",
+          moduleEventName: "PRESET_FAILED_TO_REBUILD_JUMP_TABLE",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to advance cbor of preset data object.",
+          moduleEventName: "PRESET_FAILED_TO_ADVANCE",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to init multicast data object.",
+          moduleEventName: "MULTICAST_FAILED_TO_INIT",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to advance cbor of multicast data object.",
+          moduleEventName: "MULTICAST_FAILED_TO_ADVANCE",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to init network parameters data object.",
+          moduleEventName: "NETWORK_PARAMS_FAILED_TO_INIT",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Failed to advance cbor of network parameters data object.",
+          moduleEventName: "NETWORK_PARAMS_FAILED_TO_ADVANCE",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Failed to decode payload of generic component data object.",
+          moduleEventName: "GENERIC_COMPONENT_FAILED_TO_DECODE",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Emitter controller config data object saw an incorrectly sized old revision.",
+          moduleEventName: "EMITTER_CONTROLLER_CONFIG_WRONG_SIZE",
+          moduleEventId: 9,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Emitter controller config data was given a larger buffer than expected, did the object not get migrated?",
+          moduleEventName: "EMITTER_CONTROLLER_CONFIG_BUFFER_TOO_BIG",
+          moduleEventId: 10,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Emitter controller config data object saw a revision it did not recognize.",
+          moduleEventName: "EMITTER_CONTROLLER_CONFIG_UNSUPPORTED_VERSION",
+          moduleEventId: 11,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Switchleg controller config data was passed a buffer of the wrong size.",
+          moduleEventName: "SWITCHLEG_WRONG_SIZE",
+          moduleEventId: 12,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Failed to decode the preset data object, as it ran out of memory.",
+          moduleEventName: "PRESET_DECODE_OUT_OF_MEMORY",
+          moduleEventId: 13,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        }
+      ]
+
+
+moduleName: "oem-self-test"
+
+moduleId: 11
+
+      moduleEvents: [
+        {
+          brief: "OEM test was started",
+          moduleEventName: "TEST_STARTED",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test finished as expected",
+          moduleEventName: "TEST_ENDED_SUCCESS",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test ended early because of Wireless Debug",
+          moduleEventName: "TEST_ENDED_WD",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test ended early because of Bluetooth Claiming mode",
+          moduleEventName: "TEST_ENDED_BLE_CLAIMING",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test ended early because of Bluetooth Diagnostic mode",
+          moduleEventName: "TEST_ENDED_BLE_DIAGNOSTIC",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test ended early because of an unexpected occurance",
+          moduleEventName: "TEST_ENDED_UNEXPECTED_FAILED",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test ended early because of an unexpected occurance",
+          moduleEventName: "TEST_ENDED_UNEXPECTED_CLAIMED",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test ended early because of the timeout",
+          moduleEventName: "TEST_ENDED_TIMEOUT",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        },
+        {
+          brief: "OEM test lockout has occurred",
+          moduleEventName: "LOCKOUT_OCCURRED",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "MANUFACTURING"
+        }
+      ]
+
+moduleName: "warm-dim"
+
+moduleId: 12
+
+moduleEvents: [
+        {
+          brief: "Invalid Warm Dim Curve ID was specified",
+          moduleEventName: "INVALID_WARM_DIM_CURVE_ID",
+          moduleEventId: 0,
+          dataLength: 4,
+          data: [
+            {
+              brief: "The invalid warm dim curve ID that was specified",
+              moduleEventName: "curveID",
+              moduleType: "uint32_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "CCT-Based Warm Dim attempted with XY-based curve",
+          moduleEventName: "CCT_FADE_ATTEMPTED_BY_XY_CURVE",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "INFO"
+        }
+      ]
+
+moduleName: "ot"
+
+moduleId: 13
+
+      moduleEvents: [
+        {
+          brief: "The rloc of the device changed",
+          moduleEventName: "RLOC_CHANGED",
+          moduleEventId: 0,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The new RLOC of the device",
+              moduleEventName: "newRloc",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device was involved in a leader takeover event",
+          moduleEventName: "LEADER_TAKEOVER",
+          moduleEventId: 1,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Enumeration of the leader takeover reason",
+              moduleEventName: "reason",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device was involved in reset",
+          moduleEventName: "RESET",
+          moduleEventId: 2,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Enumeration of the reset status",
+              moduleEventName: "status",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "occupancy"
+
+moduleId: 14
+
+      moduleEvents: [
+        {
+          brief: "The device has gone occupied",
+          moduleEventName: "OCCUPIED",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device has entered the grace period",
+          moduleEventName: "GRACE",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device has gone vacant",
+          moduleEventName: "VACANT",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device has gone occupied after exiting a grace period",
+          moduleEventName: "OCCUPIED_FROM_GRACE",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device has detected enough accumulated motion to reset timeouts, but not major motion",
+          moduleEventName: "MOTION_ENOUGH_ACCUMULATED",
+          moduleEventId: 4,
+          dataLength: 6,
+          data: [
+            {
+              brief: "The continuously re-calculated RMS level at the time of the event",
+              moduleEventName: "continuousRms",
+              moduleType: "int16_t"
+            },
+            {
+              brief: "The RMS level locked in during occupancy at the time of the event",
+              moduleEventName: "lockedRms",
+              moduleType: "int16_t"
+            },
+            {
+              brief: "The threshold for the minor motion",
+              moduleEventName: "minorMotionSliceThreshold",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The device has detected major motion and has reset timeouts",
+          moduleEventName: "MOTION_MAJOR_ACCUMULATED",
+          moduleEventId: 5,
+          dataLength: 6,
+          data: [
+            {
+              brief: "The continuously re-calculated RMS level at the time of the event",
+              moduleEventName: "continuousRms",
+              moduleType: "int16_t"
+            },
+            {
+              brief: "The RMS level locked in during occupancy at the time of the event",
+              moduleEventName: "lockedRms",
+              moduleType: "int16_t"
+            },
+            {
+              brief: "The threshold for the major motion",
+              moduleEventName: "majorMotionSliceThreshold",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        }
+      ]
+
+moduleName: "cal-table"
+
+moduleId: 15
+
+moduleEvents: [
+        {
+          brief: "Initialize Color Control",
+          moduleEventName: "INIT_CC",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Begin CAL Table Transfer",
+          moduleEventName: "BEGIN",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The ECID was Checked",
+          moduleEventName: "ECID",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Finish CAL Table Transfer",
+          moduleEventName: "FINISH",
+          moduleEventId: 3,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "EEPROM Read Fault",
+          moduleEventName: "EEPROM",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "ECID Check failed, I2C",
+          moduleEventName: "ECID_I2C_FAIL",
+          moduleEventId: 5,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "ECID Check failed, timeout",
+          moduleEventName: "ECID_TIMEOUT_FAIL",
+          moduleEventId: 6,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "ECID Check failed",
+          moduleEventName: "ECID_FAIL",
+          moduleEventId: 7,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "ECID Check Failed, CAL Table Not yet Programmed",
+          moduleEventName: "ECID_CHECK_BEFORE_CAL_TABLE_PROGRAMMED",
+          moduleEventId: 8,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "CAL Table Load, Write Fail",
+          moduleEventName: "WRITE_FAIL",
+          moduleEventId: 9,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The amount of Load Attempts that have accumulated in the CAL table manager",
+              moduleEventName: "loadAttemptCount",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "CAL Table Load, CRC Fail",
+          moduleEventName: "CRC_FAIL",
+          moduleEventId: 10,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The amount of Load Attempts that have accumulated in the CAL table manager",
+              moduleEventName: "loadAttemptCount",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "CAL Table Load, Restarted Lamp after EEPROM Transfer",
+          moduleEventName: "RESTARTED_AFTER_TRANSFER",
+          moduleEventId: 11,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The amount of Load Attempts that have accumulated in the CAL table manager",
+              moduleEventName: "loadAttemptCount",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "CAL Table Load, Erase Fail",
+          moduleEventName: "ERASE_FAIL",
+          moduleEventId: 12,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The amount of Load Attempts that have accumulated in the CAL table manager",
+              moduleEventName: "loadAttemptCount",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "CAL Table Load, Read External Fail",
+          moduleEventName: "READ_EXTERNAL_FAIL",
+          moduleEventId: 13,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The amount of Load Attempts that have accumulated in the CAL table manager",
+              moduleEventName: "loadAttemptCount",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "local-daylighting"
+
+moduleId: 16
+
+      moduleEvents: [
+        {
+          brief: "Local daylighting calibration started",
+          moduleEventName: "CALIBRATION_STARTED",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Local daylighting calibration failed",
+          moduleEventName: "CALIBRATION_FAILURE",
+          moduleEventId: 1,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Indicates the type of error. The list can be found in the daylight calibration helper.",
+              moduleEventName: "failureType",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "A non-fatal error occured while calibrating local daylighting",
+          moduleEventName: "CALIBRATION_WARNING",
+          moduleEventId: 2,
+          dataLength: 1,
+          data: [
+            {
+              brief: "Indicates the type of warning. The list can be found in the daylight calibration helper.",
+              moduleEventName: "warningType",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Local daylighting calibration completed successfully",
+          moduleEventName: "CALIBRATION_COMPLETE",
+          moduleEventId: 3,
+          dataLength: 2,
+          data: [
+            {
+              brief: "The new electric slop calculated for the device",
+              moduleEventName: "newElectricSlope",
+              moduleType: "int16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "The local calibration data was cleared off the device",
+          moduleEventName: "CALIBRATION_DATA_CLEARED",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "INFO"
+        }
+      ]
+
+moduleName: "vb-foldback"
+
+moduleId: 17
+
+      moduleEvents: [
+        {
+          brief: "Vb foldback finished running and set a new power scalar",
+          moduleEventName: "VB_FOLDBACK_FINISHED",
+          moduleEventId: 0,
+          dataLength: 3,
+          data: [
+            {
+              brief: "Indicates the protection trip that caused vb foldback to run. 0. OCP, 1. Brownout, 2. Buck Overdrive",
+              moduleEventName: "vbFoldbackCause",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "The Vb foldback scalar that it landed on when vb foldback finished running",
+              moduleEventName: "vbScalar",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+
+
+
+moduleName: "control-auto-detect"
+
+moduleId: 18
+
+
+      moduleEvents: [
+        {
+          brief: "Successfully chose 0-10V control. Contains info about the path taken to this decision",
+          moduleEventName: "SUCCESS_0_10_V",
+          moduleEventId: 0,
+          dataLength: 1,
+          data: [
+            {
+              brief: "The reason 0-10V control was chosen. 0 = pulse remained high, 1 = no DALI responses, 2 = auto-detect reset",
+              moduleEventName: "zeroToTenReason",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Successfully chose DALI control. Contains info about the path taken to this decision",
+          moduleEventName: "SUCCESS_DALI",
+          moduleEventId: 1,
+          dataLength: 1,
+          data: [
+            {
+              brief: "The reason DALI control was chosen. 0 = response to first message, 1 = response to second message",
+              moduleEventName: "daliReason",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Auto detect did not run, either due to an override or due to an invalid/missing serial number",
+          moduleEventName: "DID_NOT_RUN",
+          moduleEventId: 2,
+          dataLength: 1,
+          data: [
+            {
+              brief: "The reason auto detect did not run. 0 = invalid serial number, 1 = DALI override, 2 = 0-10V override, 3 = no control type override",
+              moduleEventName: "didNotRunReason",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Auto detect failed or timed out due to the watchdog. Captures the module state on failure for debugging",
+          moduleEventName: "AUTO_DETECT_TIMEOUT",
+          moduleEventId: 3,
+          dataLength: 4,
+          data: [
+            {
+              brief: "Overall Auto Detect state",
+              moduleEventName: "autoDetectState",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "Auto Detect pulse state",
+              moduleEventName: "pulseState",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "Auto Detect DALI message state",
+              moduleEventName: "daliMessageState",
+              moduleType: "uint8_t"
+            },
+            {
+              brief: "Auto Detect DALI query response state",
+              moduleEventName: "daliQueryResponseState",
+              moduleType: "uint8_t"
+            }
+          ],
+          savetoNvm: true,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "DALI message Tx Error. This should never happen.",
+          moduleEventName: "DALI_MESSAGE_TX_ERROR",
+          moduleEventId: 4,
+          dataLength: 0,
+          data: null,
+          savetoNvm: true,
+          moduleType: "ERROR"
+        }
+      ]
+
+moduleName: "reliable-pc2-ack-sender"
+
+moduleId: 19
+
+
+moduleEvents: [
+        {
+          brief: "Log high watermark for the number of elements in the cache",
+          moduleEventName: "CACHE_HIGH_WATERMARK",
+          moduleEventId: 0,
+          dataLength: 0,
+          data: [
+            {
+              brief: "Number of elements in the cache",
+              moduleEventName: "numberOfElements",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "INFO"
+        },
+        {
+          brief: "Indicates Pegasus sender failure result",
+          moduleEventName: "SENDER_FAILURE",
+          moduleEventId: 1,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Indicates Pegasus sender ack failure",
+          moduleEventName: "SENDER_ACK_ATTEMPT_FAILURE",
+          moduleEventId: 2,
+          dataLength: 0,
+          data: null,
+          savetoNvm: false,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Indicates Pegasus sender message retry",
+          moduleEventName: "MESSAGE_RETRIED",
+          moduleEventId: 3,
+          dataLength: 8,
+          data: [
+            {
+              brief: "The Destination IP address",
+              moduleEventName: "destinationAddress",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "Request Session Identifier",
+              moduleEventName: "sessionId",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "ERROR"
+        },
+        {
+          brief: "Indicates pegasus sender message being dropped",
+          moduleEventName: "MESSAGE_DROPPED",
+          moduleEventId: 4,
+          dataLength: 8,
+          data: [
+            {
+              brief: "The Destination IP address",
+              moduleEventName: "destinationAddress",
+              moduleType: "uint32_t"
+            },
+            {
+              brief: "Request Session Identifier",
+              moduleEventName: "sessionId",
+              moduleType: "uint16_t"
+            }
+          ],
+          savetoNvm: false,
+          moduleType: "ERROR"
+        }
+      ]

@@ -344,9 +344,15 @@ clean:
 	$(ECHO) "  CLEAN"
 	@$(RM_F) -r $(CLEAN_DIRS)
 
+
+
+
 help:
 	$(ECHO) "Simply type 'make -f $(firstword $(MAKEFILE_LIST))' to build OpenThread for the following "
 	$(ECHO) "target:"
 	$(ECHO) ""
 	$(ECHO) "    $(TargetTuple)"
 	$(ECHO) ""
+
+
+    

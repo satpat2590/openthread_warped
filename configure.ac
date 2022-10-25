@@ -32,16 +32,12 @@
 #
 # Declare autoconf version requirements
 #
-AC_PREREQ([2.68])
+AC_PREREQ([2.71])
 
 #
 # Initialize autoconf for the package
 #
-AC_INIT([OPENTHREAD],
-        m4_esyscmd([third_party/nlbuild-autotools/repo/scripts/mkversion -b `cat .default-version` .]),
-        [openthread-devel@googlegroups.com],
-        [openthread],
-        [http://github.com/openthread/openthread])
+AC_INIT([OPENTHREAD],[m4_esyscmd(third_party/nlbuild-autotools/repo/scripts/mkversion -b `cat .default-version` .)],[openthread-devel@googlegroups.com],[openthread],[http://github.com/openthread/openthread])
 
 # Tell the rest of the build system the absolute path where the
 # nlbuild-autotools repository is rooted at.
@@ -214,7 +210,7 @@ AC_PATH_PROG(CMP, cmp)
 # Check for and initialize libtool
 
 LT_INIT
-AC_PROG_LIBTOOL
+LT_INIT
 
 #
 # Checks for specific compiler characteristics
@@ -953,7 +949,15 @@ OLD_CFLAGS="${CFLAGS}"
 CFLAGS="${CFLAGS} -Wno-error=address"
 AC_HEADER_STDBOOL
 CFLAGS="${OLD_CFLAGS}"
-AC_HEADER_STDC
+m4_warn([obsolete],
+[The preprocessor macro `STDC_HEADERS' is obsolete.
+  Except in unusual embedded environments, you can safely include all
+  ISO C90 headers unconditionally.])dnl
+# Autoupdate added the next two lines to ensure that your configure
+# script's behavior did not change.  They are probably safe to remove.
+AC_CHECK_INCLUDES_DEFAULT
+AC_PROG_EGREP
+
 
 AC_CHECK_HEADERS([stdint.h])
 AC_CHECK_HEADERS([string.h])
